@@ -1,0 +1,57 @@
+Per ogni funzionalità, svilupperemo sia il lato front-end che il lato back-end.
+
+Registrazione e Login
+Back-end:
+
+Configura i modelli utente.
+Implementa le rotte per la registrazione e il login.
+Utilizza bcryptjs per la gestione delle password e jsonwebtoken per l'autenticazione.
+
+Front-end:
+
+Crea le pagine di registrazione e login.
+Implementa le chiamate API per la registrazione e il login utilizzando Axios.
+Gestisci lo stato dell'utente con Redux.
+
+Profili Utente
+Back-end:
+
+Implementa le rotte per recuperare e aggiornare i profili utente.
+
+Front-end:
+
+Crea la pagina del profilo utente.
+Implementa la possibilità di modificare il profilo.
+
+Post e Feed
+Back-end:
+
+Configura i modelli post.
+Implementa le rotte per creare e recuperare i post.
+
+Front-end:
+
+Crea il componente del feed.
+Implementa la possibilità di creare nuovi post.
+Visualizza i post nel feed.
+
+Connessioni
+Back-end:
+
+Configura i modelli di connessioni.
+Implementa le rotte per inviare e gestire le richieste di connessione.
+
+Front-end:
+
+Crea la funzionalità di ricerca utenti.
+Implementa la possibilità di inviare richieste di connessione.
+
+Notifiche
+Back-end:
+
+Configura i modelli di notifiche.
+Implementa le rotte per recuperare le notifiche.
+
+Front-end:
+
+Implementa la visualizzazione delle notifiche.
