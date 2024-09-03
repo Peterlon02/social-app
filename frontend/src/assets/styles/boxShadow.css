@@ -1,0 +1,7 @@
+.fancy-shadow {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Ombra più piccola */
+                0 6px 20px rgba(0, 0, 0, 0.1); /* Ombra più grande */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+

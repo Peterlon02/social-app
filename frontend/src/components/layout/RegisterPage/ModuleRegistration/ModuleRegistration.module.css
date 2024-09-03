@@ -1,0 +1,41 @@
+@import '../../../../assets/styles/colors.css';
+
+.container-main {
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    padding: 5vh 0 0 0;
+    background-color: var(--light-gray);
+}
+
+.container-register{
+    background-color: #e7f0fa;
+    padding:5vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Ombra più piccola */
+                0 6px 20px rgba(0, 0, 0, 0.1); /* Ombra più grande */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-create{
+    color: var(--turcal);
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.container-form{
+
+}
+
+.button-signup{
+    background-color: var(--greenwater)!important ;
+    border-radius: 30px!important;
+}
+
+@media(max-width:991px){
+    .container-main{
+        padding-top:2vh
+        
+    }
+}

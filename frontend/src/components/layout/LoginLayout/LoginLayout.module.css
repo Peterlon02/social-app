@@ -1,0 +1,59 @@
+@import '../../../assets/styles/colors.css';
+
+.text-login{
+    color: var(--turcal);
+    font-weight: bold;
+}
+
+.button-signin{
+    background-color: var(--turcal) !important;
+    width: 100%;
+    
+}
+
+.border-or{
+    border-bottom: 1px solid black;
+}
+
+@media(min-width: 420px) {
+    .remember-container{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media(max-width: 419px) {
+    .forgot-container{
+        padding-top: 5%;
+    }
+}
+
+.container-socials{
+    height: 10vh;
+    
+}
+
+.container-register{
+    text-align: center;
+    margin-top: 8vh;
+}
+
+.container-main{
+    background-color: var(--light-gray);
+}
+
+.button-register{
+    width: 100%;
+    height: 6vh;
+    background-color: var(--orange) !important;
+    border-radius: 150px !important
+
+}
+
+.button-signin:hover {
+    background-color: var(--turcalHover) !important;
+}
+
+.button-register:hover {
+    background-color: var(--orangeHover) !important;
+}

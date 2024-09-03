@@ -28,9 +28,11 @@ app.get('/', (req, res) => {
 
 // Importazione delle rotte 
 const authRoutes = require ('./routes/auth')
+const deleteUser = require('./routes/deleteUser')
 
 // Uso delle rotte
 app.use('/api/auth', authRoutes)
+app.use('/api', deleteUser)
 
 // Avvia il server
 app.listen(port, () => {

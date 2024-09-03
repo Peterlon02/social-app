@@ -1,0 +1,22 @@
+:root {
+    --turcal: #32bc9b;        /* Colore Primario per pulsanti e link */
+    --orange: #ff784b;        /* Colore per CTA e avvisi */
+    --blue: #1877f2;          /* Colore per link e intestazioni */
+    --midnight: #0d1b2a;      /* Colore per testo o sfondo */
+    --greenwater: #56c5cc;    /* Colore secondario, per elementi di supporto */
+    --red: #ff4d4d;           /* Colore per errori e avvisi critici */
+    --light-gray: #f4f4f4;    /* Colore per sfondi e sezioni */
+    --medium-gray: #888888;   /* Colore per testo secondario */
+
+    /* colori when hover*/
+    --turcalHover:#29a689;
+    --orangeHover:#e7683c;
+    --blueHover:#0e68d4;
+    --midnight:#172a45;
+    --greenwaterHover:#3da4aa;
+    --redHover:#e33b3b;
+
+    /* transition */
+    --transition: background-color 0.3s ease; 
+
+}

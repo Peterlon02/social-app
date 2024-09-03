@@ -1,0 +1,8 @@
+@import '../../../../assets/styles/colors.css';
+
+.container-navbar{
+    background-color: var(--greenwater);
+    text-align: center;
+    padding: 1vh 0;
+    color: rgb(255, 255, 255);
+}

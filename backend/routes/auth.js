@@ -9,7 +9,7 @@ const router = express.Router()
 
 // Rotta di registrazione
 router.post('/register', async(req, res) => {
-    const { username, email, password }=req.body
+    const { nome, cognome, username, email, password, dateOfBirth } = req.body;
 
     try {
         // Verifica se l'utente esiste già nel database
@@ -24,19 +24,25 @@ router.post('/register', async(req, res) => {
         // Creazione di un nuovo utente
         const newUser = new User({
             username, 
+            nome,
+            cognome,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+            dateOfBirth
         })
 
         // Salvataggio del nuovo utente nel database
         await newUser.save()
 
         // Generazione di un token JWT per l'utente
-        const token = jwt.sign({ userId: newUser._id }, 'secret', {expiresIn: 'In' })
+        const token = jwt.sign({ userId: newUser._id }, 'secret', {expiresIn: '1h' })
+
+        const { password: _, ...userWithoutPassword } = newUser.toObject();
 
         // Invio della risposta con il token JWT e l'ID utente
-        res.status(201).json({ token, userId: newUser._id })
+        res.status(201).json({ token, userWithoutPassword })
     }catch (err) {
+        console.error('Errore', err);
         res.status(500).json({ message: 'Server error' })
     }
 })
@@ -62,7 +68,7 @@ router.post('/login', async (req, res) => {
         const token = jwt.sign({ userId: user._id }, 'secret', { expiresIn: '1h' })
 
         // Invio della risposta con il token JWT e l'ID utente
-        res.status(201).json({ token, userId: user._id })
+        res.status(201).json({ token, user })
     }catch (err) {
         res.status(500).json({ message: 'Server error' })
     }
