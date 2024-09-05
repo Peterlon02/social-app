@@ -1,0 +1,24 @@
+.container-section{
+    margin-top: 25px;
+    padding-left: 3vh;
+    background: none !important;
+    border: none !important;
+    width: 100%;
+}
+
+.container-section:hover{
+    background-color: rgb(59, 59, 233) !important;
+}
+
+.text-section-selected{
+    padding-left: 20px;
+    color: aqua;
+}
+
+.text-section{
+    padding-left: 20px;
+}
+
+.icon-section-selected{
+    color: aqua;
+}

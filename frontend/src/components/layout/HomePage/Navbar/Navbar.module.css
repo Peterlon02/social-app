@@ -13,13 +13,16 @@
 
 .container-input{
     margin-bottom: 20px;
+
+    
     
 }
 
-@media(min-width:576px ) and (max-width:767px){
-    .text-nav{
-        padding-top: 0.6vh;
-        font-size: 22px;
+@media(min-width:375px ) and (max-width:767px){
+    .container-input{
+        margin-left: 40px;
+        margin-right: 40px;
+
     }
 }
 

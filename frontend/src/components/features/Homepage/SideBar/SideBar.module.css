@@ -1,0 +1,6 @@
+@import '../../../../assets/styles/colors.css';
+
+.column-main{
+    background-color: var(--midnight);
+    padding-right: 0;
+}

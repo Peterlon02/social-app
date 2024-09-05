@@ -49,7 +49,6 @@ function AppContent() {
 
 function AppRoutes() {
   const { state } = useAuth();
-  console.log(state);
   
 
   return (
