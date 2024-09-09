@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faUserFriends, faBell, faCog } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../components/layout/HomePage/Navbar/Navbar'
 import Main from '../components/layout/HomePage/Main/Main'
+import { SelectedSectionProvider } from "../context/SelectedSectionContext";
 
 function HomePage(){
     const {state} = useAuth()
@@ -15,11 +16,12 @@ function HomePage(){
     
 
     return (
-        <Container fluid className="vh-100  p-0">
+    <SelectedSectionProvider>
+        <Container fluid className= "p-0">
             <Navbar />
             <Main />
-            
         </Container >
+     </SelectedSectionProvider>
     )
 }
 

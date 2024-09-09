@@ -3,9 +3,17 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User')// Importa il modello utente
+const multer =require ('multer')
+const cloudinary = require('../cloudinaryConfig');
+const fs = require('fs');
+const path = require('path');
 
 // Creazione del router Express
 const router = express.Router()
+
+// Configura multer per salvare temporaneamente i file in memoria
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
 // Rotta di registrazione
 router.post('/register', async(req, res) => {
@@ -74,6 +82,40 @@ router.post('/login', async (req, res) => {
     }
 })
 
+//Rotta per aggiungere informazioni dell'utente
+router.post('/add',upload.single('information'), async (req, res)=>{
+    const { email, campo } = req.body;
+  const file = req.file;
+
+
+
+  if (!file) {
+    return res.status(400).json({ message: 'No file uploaded' });
+  }
+
+  try {
+    // Carica l'immagine su Cloudinary
+    const result = await cloudinary.uploader.upload_stream({ folder: 'BackgroundImage' }, (error, result) => {
+      if (error) {
+        throw new Error(error);
+      }
+      return result;
+    }).end(file.buffer);  // Carica dal buffer del file
+
+    // Trova l'utente e aggiorna il percorso dell'immagine
+    const user = await User.findOne({ email });
+    user[campo] = result.secure_url;  // Salva l'URL restituito da Cloudinary
+    await user.save();
+
+    res.status(200).json({ message: 'Immagine caricata con successo', imageUrl: result.secure_url });
+  } catch (err) {
+    console.error('Errore durante il caricamento dell\'immagine:', err);
+    res.status(500).json({ message: 'Errore del server', error: err.message });
+  }
+})
+
+
 // Esportazione del router
 module.exports = router
+
 

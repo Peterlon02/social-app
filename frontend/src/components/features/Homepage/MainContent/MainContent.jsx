@@ -2,6 +2,7 @@ import React from "react";
 import { Col } from "react-bootstrap";
 import { useSelectedSection } from "../../../../context/SelectedSectionContext";
 import Home from "./Sections/Home/Home";
+import Profile from './Sections/Profile/Profile';
 
 function MainContent(){
 
@@ -13,22 +14,18 @@ function MainContent(){
             case 'Home':
                 return <Home />;
             case 'Profile':
-                return <div>{selectedSection}</div>;
+                return <Profile />;
             case 'Friends':
                 return <div>{selectedSection}</div>;
             case 'Notifications':
                 return <div>{selectedSection}</div>;
             case 'Settings':
                 return <div>{selectedSection}</div>;
-            
-        
-            default:
-                break;
         }
     }
 
     return (
-        <Col md={6}>{renderContent()}</Col>
+        <Col className="">{renderContent()}</Col>
     )
 }
 

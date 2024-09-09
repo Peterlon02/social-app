@@ -7,7 +7,7 @@ import { faHome, faUser, faUsers, faBell, faCog } from '@fortawesome/free-solid-
 import { useSelectedSection } from "../../../../context/SelectedSectionContext";
 
 
-function SideBar(){
+function SideBar(prop){
 
     const {selectedSection, setSelectedSection}=useSelectedSection()  //Usa il contesto
     
@@ -17,7 +17,7 @@ function SideBar(){
     }
 
     return(
-        <Col lg={3} md={3} className={`${styles['column-main']} d-md-block d-none`}>
+        <Col  md={prop.size} className={`${styles['column-main']} d-md-block d-none h-100`}>
             <SideSection 
                 icon={<FontAwesomeIcon icon={faHome}/>}
                 text={'Home'}

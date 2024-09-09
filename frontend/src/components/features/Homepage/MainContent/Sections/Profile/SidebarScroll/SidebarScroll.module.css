@@ -1,0 +1,9 @@
+@import '../../../../../../../assets/styles/colors.css';
+
+.container-show{
+    background-color:var(--midnight);
+}
+
+.container-button:hover{
+    background-color: blue;
+}

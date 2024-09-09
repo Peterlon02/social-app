@@ -33,6 +33,7 @@ const deleteUser = require('./routes/deleteUser')
 // Uso delle rotte
 app.use('/api/auth', authRoutes)
 app.use('/api', deleteUser)
+app.use('/api/uploads', express.static('uploads'));
 
 // Avvia il server
 app.listen(port, () => {
